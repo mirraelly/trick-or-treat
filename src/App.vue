@@ -5,13 +5,18 @@ import Mural from './components/Mural.vue';
 import spiderWithWeb from '@/assets/images/spider-with-web.png';
 import batMoon from '@/assets/images/bat-moon.png';
 import witchFlying from '@/assets/images/witch-flying.png';
+import cauldron from '@/assets/images/calderon_transparent.png';
 import 'animate.css';
 import { ref } from 'vue';
 
 const userName = ref('visitante');
+const showCauldron = ref(false);
 const updateName = (name) => {
   userName.value = name;
+  showCauldron.value = true;
 }
+
+
 
 </script>
 
@@ -32,6 +37,9 @@ const updateName = (name) => {
     </span>
     <span class="backgroud-witch-flying">
       <img :src="witchFlying" alt="Witch flying" class="witch-flying animate__animated animate__lightSpeedInLeft" />
+    </span>
+    <span class="backgroud-cauldron" v-if="showCauldron">
+      <img :src="cauldron" alt="Cauldron" class="cauldron animate__animated animate__lightSpeedInLeft" />
     </span>
   </div>
 </template>
@@ -82,6 +90,22 @@ const updateName = (name) => {
 
 .witch-flying {
   z-index: 0;
+  width: 100%;
+  height: auto;
+}
+
+.backgroud-cauldron {
+  position: absolute;
+  top: 76%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.cauldron {
+  z-index: 1;
   width: 100%;
   height: auto;
 }

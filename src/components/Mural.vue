@@ -3,7 +3,6 @@
 import 'animate.css';
 import lottie from "lottie-web";
 import GameInstructions from './derived/GameInstructions.vue';
-import calderon from '@/assets/images/calderon_c.svg'
 
 export default {
   nome: "Mural",
@@ -33,8 +32,6 @@ export default {
     return {
       showFirstContainer: true,
       showInstructions: false,
-      showGame: false, 
-      calderon,
     }
   },
   methods: {
@@ -45,7 +42,6 @@ export default {
     nameSubmited(name) {
       this.$emit('nameSubmitted', name )
       this.showInstructions = false;
-      this.showGame = true;
     }
   }
 }
@@ -58,11 +54,6 @@ export default {
   </section>
   <section v-if="showInstructions" class="second-container">
     <GameInstructions @name-submitted="nameSubmited($event)" />
-  </section>
-  <section v-if="showGame" class="third-container">
-      <span>
-        <img :src="calderon" alt="calderon" class="calderon">
-      </span>
   </section>
 </template>
 
@@ -108,11 +99,9 @@ export default {
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: #000;
   box-shadow: 0 4px 5px 3px #000000b0 !important;
+  z-index: 2;
 }
 
-.calderon {
-  width: 100%;
-}
 
 /* .second-container {
   display: none;
