@@ -5,8 +5,7 @@ import lottie from "lottie-web";
 import GameInstructions from './derived/GameInstructions.vue';
 
 export default {
-  //: 'Mural',
-  nome: "LottiePlayer",
+  nome: "Mural",
   components: {
     GameInstructions
   },
@@ -48,7 +47,7 @@ export default {
     <button class="init" @click="startGame">START</button>
   </section>
   <section v-else class="second-container">
-    <GameInstructions />
+    <GameInstructions @name-submitted="$emit('nameSubmitted', $event)" />
   </section>
 </template>
 

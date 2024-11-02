@@ -1,7 +1,6 @@
 <script scoped>
 import candyIcon from '@/assets/images/lollipop.png';
 import trickIcon from '@/assets/images/witch.png';
-import DisplayComponent from './derived/DisplayComponent.vue';
 
 export default {
     name: "AppHeader",
@@ -19,9 +18,6 @@ export default {
             type: Number,
             default: 0,
         },
-      component: {
-        DisplayComponent,
-      }
     },
     data() {
         return {
@@ -38,7 +34,6 @@ export default {
         <div class="user-info box-icon">
             <div class="icon circle"></div>
             <span class="user-name">{{ userName }}</span>
-            <DisplayComponent />
         </div>
         <div class="container-counter">
             <div class="candy-info box-icon">

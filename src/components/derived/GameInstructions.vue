@@ -4,6 +4,7 @@ import patty from '@/assets/images/party.png';
 import kissBeam from '@/assets/images/kiss-beam.png';
 import ghost from '@/assets/images/ghost_9.png';
 import lollipop from '@/assets/images/lollipop.png';
+import 'animate.css';
 
 export default {
     nome: 'GameInstructions',
@@ -19,7 +20,7 @@ export default {
     },
     methods: {
         submitForm() {
-            this.$emit('name-submitted', this.name);
+            this.$emit('nameSubmitted', this.name);
             this.name = '';
         },
     },
@@ -30,7 +31,7 @@ export default {
     <section class="presentation-container">
         <section class="presentation-text">
             <h2>Bem-vindo ao jogo mais divertido do Halloween!
-                <img :src="patty" alt="Patty icon" class="patty-icon">
+                <img :src="patty" alt="Patty icon" class="patty-icon animate__animated animate__tada animate__infinite">
             </h2>
             <p>Para começar, insira seu nome e clique em "OK" para entrar no clima! </p>
             <p>Em seguida, prepare-se para uma aventura cheia de surpresas:
@@ -45,7 +46,7 @@ export default {
             </p>
             <p class="finaly-text-p">Então, está pronto para se surpreender? Vamos jogar!
                 <span class="icon-box">
-                    <img :src="ghost" alt="Ghost" class="ghost-icon icon">
+                    <img :src="ghost" alt="Ghost" class="ghost-icon icon animate__animated animate__pulse animate__infinite">
                     <img :src="lollipop" alt="Lollipop" class="lollipop-icon icon">
                 </span>
             </p>
@@ -53,7 +54,7 @@ export default {
         <section class="name-container">
             <img :src="pumpkinPath" alt="pumpkin-path" class="pumpkin-path">
             <form @submit.prevent="submitForm" class="form-container">
-                <input type="text" id="name" v-model="name" placeholder="Seu nome" @keyup.enter="submitForm" required />
+                <input type="text" id="name" v-model="name" placeholder="Seu nome" required />
                 <button type="submit">OK</button>
             </form>
         </section>
