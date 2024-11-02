@@ -17,7 +17,6 @@ const updateName = (name) => {
 }
 
 
-
 </script>
 
 <template>
